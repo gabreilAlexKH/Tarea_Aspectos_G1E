@@ -21,7 +21,8 @@ void around(Color color) : colorChange(color) {
 ```
 
 *Ejemplo de ejecusion*
-![Consola](/imagenes/cap1)
+
+![Consola](/imagenes/cap1.jpg)
 
 
 
@@ -72,4 +73,5 @@ Para remediar esto en el programa, se ha agregado al pointcut la responsabilidad
 ```
 
  Los cambios seran guardador en el archivo *ajustes.dat*
- ![Consola](/imagenes/cap2)
+ 
+ ![Carpetas](/imagenes/cap2.jpg)
