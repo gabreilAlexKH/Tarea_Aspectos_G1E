@@ -47,7 +47,7 @@ public aspect Observant {
 	 */
 	after(): newVentana(){
 		
-		System.out.println("Cargando datos alamasenados"); 
+		System.out.println("Cargando datos guardados ..."); 
 		
 		//Captura de objeto del constructor
 		Ventana ventana = (Ventana) thisJoinPoint.getThis();
