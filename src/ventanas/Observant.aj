@@ -4,10 +4,23 @@ import javax.swing.*;
 import java.awt.Color;
 import java.awt.event.*;
 import java.io.FileNotFoundException;
-
+import java.util.HashMap;
+import java.util.Map;
 
 
 public aspect Observant {
+	
+	
+	Map<Color, String> getConfig(){
+    	Map<Color,String> result = new HashMap<>();
+    	result.put(Color.red, "Rojo");
+    	result.put(Color.green, "Verde");
+    	result.put(Color.blue, "Azul");
+    	return result;
+    }
+	
+	Map<Color, String> mapeo = getConfig();
+	
 	
 	private final static String archivo = "ajuestes.dat";
 		
@@ -27,7 +40,7 @@ public aspect Observant {
 		proceed(color);
 		
 		//Imprecion del color capturado despues del poincut
-		String colorTexto = color.toString();
+		String colorTexto = mapeo.get(color);
     	System.out.println("Color de fondo cambiado a: " + colorTexto);
     	
     	int res = fileColor.guardar(color, archivo);

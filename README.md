@@ -11,7 +11,7 @@ void around(Color color) : colorChange(color) {
 		proceed(color);
 		
 		//Imprecion del color capturado despues del poincut
-		String colorTexto = color.toString();
+		String colorTexto = mapeo.get(color);
     	System.out.println("Color de fondo cambiado a: " + colorTexto);
     	
     	int res = fileColor.guardar(color, archivo);
