@@ -22,7 +22,7 @@ public aspect Observant {
 	Map<Color, String> mapeo = getConfig();
 	
 	
-	private final static String archivo = "ajuestes.dat";
+	private final static String archivo = "ajustes.dat";
 		
 	/**
 	 * Poincut con captura del parametro de setBackground()
@@ -31,7 +31,7 @@ public aspect Observant {
 	pointcut colorChange(Color color) : call(* setBackground(Color)) && args(color);
     
 	/**
-	 * Imprecion del color capturado en pantalla
+	 * Impresion del color capturado en pantalla
 	 * @param color
 	 */
 	void around(Color color) : colorChange(color) {
@@ -39,14 +39,14 @@ public aspect Observant {
 		//Dejar al comando del pointcut ejecutarse sin cambios al color
 		proceed(color);
 		
-		//Imprecion del color capturado despues del poincut
+		//Impresion del color capturado despues del poincut
 		String colorTexto = mapeo.get(color);
     	System.out.println("Color de fondo cambiado a: " + colorTexto);
     	
     	int res = fileColor.guardar(color, archivo);
     	
     	if(res < 0) {
-    		System.out.println("¡Proseso de guardado fallido!");
+    		System.out.println("ï¿½Proseso de guardado fallido!");
     	}
 	}
 	
@@ -56,7 +56,7 @@ public aspect Observant {
 	pointcut newVentana(): execution( Ventana.new(..));
 	
 	/**
-	 * Asigna el color grardado en memoria al nuevo objeto ventana
+	 * Asigna el color guardado en memoria al nuevo objeto ventana
 	 */
 	after(): newVentana(){
 		
@@ -65,7 +65,7 @@ public aspect Observant {
 		//Captura de objeto del constructor
 		Ventana ventana = (Ventana) thisJoinPoint.getThis();
 		
-		//Cargar al ultimo clor guardado
+		//Cargar al ultimo color guardado
 		try {
 			Color fondo = fileColor.leer(archivo);
 			ventana.getContentPane().setBackground(fondo);
