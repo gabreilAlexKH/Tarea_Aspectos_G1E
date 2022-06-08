@@ -21,14 +21,14 @@ void around(Color color) : colorChange(color) {
 	}
 ```
 
-*Ejemplo de ejecusion*
+*Ejemplo de ejecucion*
 
 ![Consola](/imagenes/cap1.jpg)
 
 
 
 **Funcionalidad Adicional**
-La Ventana solo esta encargada de mostrar al usuario la interfas grafica y ejecutar las acciones corespondientes a los botones. Pero estos cambios no son guardados a largo plazo. En una aplicasion real , las responsabilidades de guardado de cambios esta a cargo de otras clase, pero dentro de la interfas se deben incorporar estos metodos de guardado y carga de cambios dentro de su codigo. Por lo tanto el alamacenamiento se vuelve un consern transversal.
+La Ventana solo esta encargada de mostrar al usuario la interfas grafica y ejecutar las acciones corespondientes a los botones. Pero estos cambios no son guardados a largo plazo. En una aplicaion real , las responsabilidades de guardado de cambios esta a cargo de otras clase, pero dentro de la interfaz se deben incorporar estos metodos de guardado y carga de cambios dentro de su codigo. Por lo tanto el almacenamiento se vuelve un concern transversal.
 
 Para remediar esto en el programa, se ha agregado al pointcut la responsabilidad de guardar en un archivo binario el awt.Color que registra cuando se cambia el color del fondo.
 
@@ -47,7 +47,7 @@ Para remediar esto en el programa, se ha agregado al pointcut la responsabilidad
         }
 ```
 
- Ademas se ha agregado un pointcut que captura la ejecusion del contructor de la clase Ventana y asigna el color de fondo guardado previemente o blanco si no exite el archivo binario.
+ Ademas se ha agregado un pointcut que captura la ejecucion del constructor de la clase Ventana y asigna el color de fondo guardado previemente o blanco si no existe el archivo binario.
 
 ```
 	pointcut newVentana(): execution( Ventana.new(..));
@@ -73,6 +73,9 @@ Para remediar esto en el programa, se ha agregado al pointcut la responsabilidad
 
 ```
 
- Los cambios seran guardador en el archivo *ajustes.dat*
+ Los cambios seran guardados en el archivo *ajustes.dat*
+
  
  ![Carpetas](/imagenes/cap2.jpg)
+ 
+ Meiyin Chang, Gabriel Maldonado, Andres Martinez, Rommel Marcillo
