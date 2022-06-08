@@ -1,3 +1,4 @@
+**Gabriel Maldonado,Rommel Marcillo, Diego Martínez, Meiyin Chang
 # Tarea_Aspectos_G1E
 **Funcionalidad minima**
 El pointcut captura las llamadas a y optiene el parametro el awt.Color Object que se le pasa como parametro. El awt.Color es convertido a formato de texto y escrito en la consola
